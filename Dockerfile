@@ -1,7 +1,5 @@
 FROM golang:alpine
 
-ENV GOROOT /go
-
 RUN apk add --no-cache g++ glide git && \
 mkdir -p /go/src/github.com/nathan-k-/ && \
 cd /go/src/github.com/nathan-k-/ && \
