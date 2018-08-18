@@ -22,5 +22,5 @@ chown mqttbeat:mqttbeat /home/mqttbeat/entrypoint.sh
 USER mqttbeat
 WORKDIR /home/mqttbeat/
 VOLUME ["/etc/mqttbeat"]
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/home/mqttbeat/entrypoint.sh"]
 CMD ["mqttbeat", "-c", "/etc/mqttbeat/mqttbeat.yml"]
