@@ -23,4 +23,4 @@ USER mqttbeat
 WORKDIR /home/mqttbeat/
 VOLUME ["/etc/mqttbeat"]
 ENTRYPOINT ["/home/mqttbeat/entrypoint.sh"]
-CMD ["mqttbeat", "-c", "/etc/mqttbeat/mqttbeat.yml"]
+CMD ["mqttbeat", "-c", "/etc/mqttbeat/mqttbeat.yml", "-e", "-d", "*"]
