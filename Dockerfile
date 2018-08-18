@@ -8,6 +8,7 @@ cd ./mqttbeat && \
 glide install && \
 go build -ldflags "-linkmode external -extldflags -static" -a main.go && \
 cp ./main /usr/bin/mqttbeat && \
+mkdir -p /etc/default/ && \
 cp ./fields.yml /etc/default/fields.yml && \
 cp ./mqttbeat.yml /etc/default/mqttbeat.yml && \
 apk del g++ glide git && rm -rf /go && rm -rf /root/.glide && \
