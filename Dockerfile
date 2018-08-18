@@ -1,6 +1,6 @@
 FROM golang:alpine
 
-RUN apk add --no-cache g++ glide \
+RUN apk add --no-cache --virtual g++ glide \
 mkdir -p /go/src/github.com/nathan-k-/ && \
 cd /go/src/github.com/nathan-k-/ && \
 git clone https://github.com/nathan-k-/mqttbeat && \
