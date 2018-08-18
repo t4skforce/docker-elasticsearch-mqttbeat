@@ -6,10 +6,10 @@ cd /go/src/github.com/nathan-k-/ && \
 git clone https://github.com/nathan-k-/mqttbeat && \
 cd ./mqttbeat && \
 glide install && \
-go build -o mqttbeat && \
+go build -ldflags "-linkmode external -extldflags -static" -a main.go -o mqttbeat && \
 cp ./mqttbeat /usr/bin/ && \
 mkdir -p /etc/mqttbeat/ && \
-apk del g++ glide git && rm -rf /go && \
+apk del g++ glide git && rm -rf /go && rm -rf /root/.glide && \
 addgroup -g 1000 -S mqttbeat && adduser -u 1000 -S mqttbeat -G mqttbeat && \
 mkdir -p /etc/mqttbeat && \
 chown -R mqttbeat:mqttbeat /etc/mqttbeat
