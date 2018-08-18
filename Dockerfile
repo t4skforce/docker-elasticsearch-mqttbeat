@@ -1,13 +1,14 @@
 FROM golang:alpine
 
-RUN apk add --no-cache --virtual g++ glide \
+ENV GOROOT /go
+
+RUN apk add --no-cache g++ glide git && \
 mkdir -p /go/src/github.com/nathan-k-/ && \
 cd /go/src/github.com/nathan-k-/ && \
 git clone https://github.com/nathan-k-/mqttbeat && \
 cd ./mqttbeat && \
 glide install && \
-make setup && \
-make && \
+go build -o mqttbeat && \
 cp ./mqttbeat /usr/bin/ && \
 mkdir -p /etc/mqttbeat/ && \
 cp ./mqttbeat.full.yml /etc/default/mqttbeat.yml && \
