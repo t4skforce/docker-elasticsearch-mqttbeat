@@ -1,5 +1,5 @@
 #!/bin/sh
 set -e
-if [ ! -f /etc/mqttbeat/mqttbeat.conf ]; then
-  cp /etc/default/mqttbeat.conf /etc/mqttbeat/mqttbeat.conf
+if [ ! -f /etc/mqttbeat/mqttbeat.yml ]; then
+  cp /etc/default/mqttbeat.yml /etc/mqttbeat/mqttbeat.yml
 fi
